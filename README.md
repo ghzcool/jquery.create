@@ -26,6 +26,7 @@ appends jQuery instance of created HTML element.
 
 ## Properties
 
+-  `tag` tagName "div" by default
 -  `cls` className that will be set to created HTML element
 -  `items` array of properties for child elements
 
