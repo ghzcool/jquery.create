@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="../node_modules/jquery/dist/jquery.min.js"></script>
+	<script src="../dist/jquery.create.js"></script>
+	<script>
+		var getId = new function(){
+			var id = 0;
+			return function(){
+				return Number(id++);
+			};
+		}();
+	
+		$(document).ready(function(){
+		
+			var h2 = $('<h2 />');
+			h2.text("Makes HTML layout easier");
+		
+			var h3 = document.createElement("h3");
+			h3.innerText = "By allowing to render HTML";
+		
+			var h4 = $().create({
+				tag: "h4",
+				text: "Based on JavaScript object"
+			});
+			
+			var container;
+		
+			$('body').create({
+				cls: "main-container",
+				items: [
+					{
+						tag: "h1",
+						text: "jQuery create"
+					},
+					h2,
+					h3,
+					h4,
+					container = $().create({
+						cls: "list-container"
+					}),
+					{
+						tag: "button",
+						text: "Add",
+						click: ()=>{
+							var item = $().create({
+								cls: "list-item",
+								items: [
+									{
+										tag: "span",
+										text: "List Item " + getId()
+									},
+									{
+										tag: "button",
+										text: "Remove",
+										click:()=>{
+											item.remove();
+										}
+									}
+								]
+							});
+							container.append(item);
+						}
+					}
+				]
+			});
+		});
+	</script>
+</head>
+<body>
+</body>
+</html>
