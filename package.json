@@ -1,10 +1,14 @@
 {
-  "version": "1.0.0",
+  "version": "1.0.2",
   "name": "jquery-create",
+  "description": "Create HTML element using jQuery",
+  "repository": { 
+    "type": "git",
+    "url": "https://github.com/ghzcool/jquery.create.git"
+  }
   "engines": {
     "node": ">=6.10"
   },
-  "description": "Create HTML element using jQuery",
   "dependencies": {
     "jquery": "3.2.1"
   },
