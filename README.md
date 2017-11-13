@@ -1,6 +1,16 @@
 # jquery.create
 Create HTML element using jQuery
 
+## Installation
+
+```
+npm install jquery-create
+```
+
+Check dist directory for compiled and minified js files. Samle of usage is in demo directory. Add script after jQuery script. Required jQuery version is 3.2.1 but may work with older version.
+
+## Usage
+
 ```
 var instance = $().create(props);
 ```
