@@ -1,13 +1,17 @@
+"use strict";
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
 $.fn.create = function (_config) {
-	const parentInstance = this;
-	const config = Object.assign({
+	var parentInstance = this;
+	var config = Object.assign({
 		tag: "div"
 	}, _config);
-	const HTMLElement = document.createElement(config.tag);
+	var HTMLElement = document.createElement(config.tag);
 
-	const jInstance = $(HTMLElement);
-	const excludeKeys = ["tag", "cls"];
-	Object.keys(config).map(key => {
+	var jInstance = $(HTMLElement);
+	var excludeKeys = ["tag", "cls"];
+	Object.keys(config).map(function (key) {
 		if (excludeKeys.indexOf(key) === -1 && "function" === typeof jInstance[key]) {
 			jInstance[key](config[key]);
 		}
@@ -16,10 +20,10 @@ $.fn.create = function (_config) {
 		jInstance.addClass(config.cls);
 	}
 
-	const items = Object.assign([], config.items || config.children);
-	items.map(item => {
+	var items = Object.assign([], config.items || config.children);
+	items.map(function (item) {
 		if (!!item) {
-			if (typeof item === "object" && !item.jquery && !(item instanceof Element)) {
+			if ((typeof item === "undefined" ? "undefined" : _typeof(item)) === "object" && !item.jquery && !(item instanceof Element)) {
 				jInstance.create(item);
 			} else {
 				jInstance.append(item);
